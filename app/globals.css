@@ -27,7 +27,14 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+}
+
+@media (max-width:400px) {
+  .mobil-400 {
+    width: 200px;
+    height: 300px;
   }
 }

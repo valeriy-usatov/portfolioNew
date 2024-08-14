@@ -1,4 +1,13 @@
 import type { Config } from "tailwindcss";
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+
+
+
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 
 const config: Config = {
   content: [
@@ -14,7 +23,25 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    colors: {
+      ...colors,
+      primary: colors.purple,
+      secondary: colors.pink,
+    },
   },
-  plugins: [],
+  plugins: [
+    addVariablesForColors,
+  ],
 };
 export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
