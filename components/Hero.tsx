@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { Button } from './ui/MovingBorder';
@@ -10,6 +11,7 @@ import { GlobeDemo } from './GlobeDemo';
 // import { MovingBorder } from './ui/MovingBorder';
 
 const Hero = () => {
+  const t = useTranslations('About');
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -22,19 +24,19 @@ const Hero = () => {
           >
             <h1 className="text-white mb-4 text-4xl lg:text-7xl sm:text-5xl leading-normal sm:leading-normal lg:leading-normal font-extrabold">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-                Hello, I'm
+              {t('Hello')}
               </span>
               <br />
               <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
-                  'Valeriy',
+                  `${t('Valeriy')}`,
                   2000, // wait 1s before replacing "Mice" with "Hamsters"
-                  'Web Developer',
+                  `${t('WebDev')}`,
                   1000,
-                  'React Developer',
+                  `${t('ReactDev')}`,
                   1000,
-                  'Next.Js Developer',
+                  `${t('NextDev')}`,
                   1000,
                 ]}
                 wrapper="span"
@@ -43,15 +45,14 @@ const Hero = () => {
               />
             </h1>
             <p className="text-[#ADB7BE] sm:text-lg lg:text-xl mb-6 text-base">
-              Welcame to my portfolio! Scrol down to discover more about my projects, and how I can
-              help bring yours ideas to life
+            {t('description')}
             </p>
             <div>
               <Link
                 href="/#contact"
                 className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
               >
-                Hire Me
+                {t('HireMe')}
               </Link>
               <Link
                 href="./Usatov.pdf"
@@ -60,7 +61,7 @@ const Hero = () => {
                 className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
               >
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                  Download CV
+                {t('download')}
                 </span>
               </Link>
             </div>

@@ -1,18 +1,18 @@
-// "use client";
 
 import React from 'react';
 import { FaLocationArrow } from "react-icons/fa6";
+import { useTranslations } from 'next-intl';
 import { projects } from '@/data';
 import { PinContainer } from './ui/3d-pin';
 import Link from 'next/link';
 
 const ResentProjects = () => {
-
+  const t = useTranslations('Projects');
   return (
     <section id="projects">
       <div className="py-20 text-white">
         <h1 className="text-4xl font-bold text-center">
-          A small selection of <span className="text-purple-400">recent projects</span>
+        {t('title')} <span className="text-purple-400">{t('titleSpan')}</span>
         </h1>
         <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-16 mt-10">
           {projects.map(({ id, title, des, img, iconLists, link, gitHubLink }) => (

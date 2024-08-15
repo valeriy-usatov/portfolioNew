@@ -1,5 +1,6 @@
 'use client';
 import React, { useTransition, useState, ReactElement } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import TabButton from './TabButton';
 import { Button } from './ui/MovingBorder';
@@ -10,55 +11,58 @@ interface TabData {
   content: ReactElement;
 }
 
-const TAB_DATA: TabData[] = [
-  {
-    title: 'Skills',
-    id: 'skills',
-    content: (
-      <ul className="list-disc pl-2">
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>Redux</li>
-        <li>Node.js</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Tailwind</li>
-        <li>Git</li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Education',
-    id: 'education',
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Tomsk State University of Control Systems and Radioelectronics</li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Certifications',
-    id: 'certifications',
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Udemy</li>
-        <li>Academy school</li>
-      </ul>
-    ),
-  },
-];
+
 
 const About = () => {
   const [tab, setTab] = useState('skills');
   const [isPending, startTransition] = useTransition();
+  const t = useTranslations('AboutMe');
 
   const handleTabChange = (id: string): void => {
     startTransition(() => {
       setTab(id);
     });
   };
+
+  const TAB_DATA: TabData[] = [
+    {
+      title: 'Skills',
+      id: 'skills',
+      content: (
+        <ul className="list-disc pl-2">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Redux</li>
+          <li>Node.js</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Tailwind</li>
+          <li>Git</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Education',
+      id: 'education',
+      content: (
+        <ul className="list-disc pl-2">
+          <li>{t('University')}</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Certifications',
+      id: 'certifications',
+      content: (
+        <ul className="list-disc pl-2">
+          <li>Udemy</li>
+          <li>Academy school</li>
+        </ul>
+      ),
+    },
+  ];
 
   return (
     <section className="text-white" id="about">
@@ -85,44 +89,29 @@ const About = () => {
           objectFit="cover"
           alt="about-image"
           className="rounded-2xl"
-        />
-          
+        /> 
         </Button>
-
-        {/* <Image
-          src="/images/my-photo_big.jpg"
-          width={500}
-          height={400}
-          alt="about-image"
-          className="rounded-2xl"
-        /> */}
        </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4 text-center">About Me</h2>
+          <h2 className="text-4xl font-bold text-white mb-4 text-center">{t('About_Me')}</h2>
           <p className="text-base lg:text-lg">
-            I am a web developer with a passion for creating interactive and responsive web
-            applications. My expertise includes JavaScript, TypeScript, React, Next.js, Redux,
-            Node.js, HTML, CSS, Tailwind CSS, and Git. I thrive on continuous learning and am
-            dedicated to expanding my knowledge and honing my skills. As a collaborative team
-            player, I am driven by the excitement of working with others to craft extraordinary
-            applications. Outside of coding, you can find me exploring new hiking trails or
-            experimenting with gourmet cooking recipes.
+          {t('Description')}
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton selectTab={() => handleTabChange('skills')} active={tab === 'skills'}>
               {' '}
-              Skills{' '}
+              {t('Skills')}
             </TabButton>
             <TabButton selectTab={() => handleTabChange('education')} active={tab === 'education'}>
               {'  '}
-              Education{' '}
+              {t('Education')}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange('certifications')}
               active={tab === 'certifications'}
             >
               {' '}
-              Certifications{' '}
+              {t('Certifications')}
             </TabButton>
           </div>
           {/* <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div> */}

@@ -1,15 +1,35 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Button from './ui/Button';
+import { Label } from './ui/Label';
+import { Input } from './ui/Input';
+import { cn } from './lib/utils';
 import GithubIcon from '../public/github-icon.svg';
 import LinkedinIcon from '../public/linkedin-icon.svg';
 import Whatsapp from '../public/whatsapp.svg';
 import Telegram from '../public/telegram.svg';
-import Link from 'next/link';
-import Image from 'next/image';
-import Button from './ui/Button';
+
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+      {children}
+    </div>
+  );
+};
+
 
 const Email = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const t = useTranslations('Contacts');
 
   type FormType ={
     email:string, 
@@ -52,10 +72,9 @@ const Email = () => {
     <section id="contact" className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">{t('title')}</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently looking for new opportunities, my inbox is always open. Whether you
-          have a question or just want to say hi, I&apos;ll try my best to get back to you!
+        {t('description')}
         </p>
         <div className="socials flex gap-2">
           <Link className='hover:scale-125' href="https://github.com/valeriy-usatov/" target="_blank">
@@ -74,14 +93,16 @@ const Email = () => {
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
+          <p className="text-green-500 text-sm mt-2">{t('EmailSent')}</p>
         ) : (
           <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="">
-              <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
-                Your email
-              </label>
-              <input
+              <LabelInputContainer>
+                <Label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
+                {t('Email')}
+                </Label>
+              </LabelInputContainer>
+              <Input
                 name="email"
                 type="email"
                 id="email"
@@ -91,27 +112,32 @@ const Email = () => {
               />
             </div>
             <div className="">
-              <label htmlFor="subject" className="text-white block text-sm mb-2 font-medium">
-                Subject
-              </label>
-              <input
+              <LabelInputContainer>
+                <Label htmlFor="subject" className="text-white block text-sm mb-2 font-medium">
+                {t('Subject')}
+                </Label>
+              </LabelInputContainer>
+              <Input
                 name="subject"
                 type="text"
                 id="subject"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder={t('sayHi')}
               />
             </div>
             <div className="">
-              <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
-                Message
-              </label>
-              <textarea
+              <LabelInputContainer>
+                <Label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
+                {t('Message')}
+                </Label>
+              </LabelInputContainer>
+              <Input
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
+                type="text"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 h-[80px]"
+                placeholder={t('Talk')}
               />
             </div>
             {/* <button
@@ -120,7 +146,7 @@ const Email = () => {
             >
               Send Message
             </button> */}
-            <Button title='Send Message' />
+            <Button title={t('Send')} />
           </form>
         )}
       </div>
@@ -129,3 +155,5 @@ const Email = () => {
 };
 
 export default Email;
+
+
