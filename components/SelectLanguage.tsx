@@ -24,22 +24,9 @@ export default function SelectLanguage() {
     });
   };
 
-  console.log(localActive);
-  
-  
-
   useEffect(()=>{
     localActive==='ru' ? setLang('RU'): setLang('EN')
   },[localActive])
-
-  // const HandlerClickRu = ()=>{
-  //   setLang('RU')
-  //   setOpen(false)
-  // }
-  // const HandlerClickEn = ()=>{
-  //   setLang('EN')
-  //   setOpen(false)
-  // }
 
 
   return (
@@ -49,14 +36,14 @@ export default function SelectLanguage() {
         <Image src={ArrowDown} alt="ArrowDown" className=''/>
       </div>
       {open && (
-        <div>
-        <Link href="/ru" className="flex gap-3" onClick={()=>setOpen(value=>!value)}>
+        <div className='absolute'>
+        <Link href="/ru" className="flex gap-3 hover:scale-110" onClick={()=>setOpen(value=>!value)}>
           <Image src={RusFlag} alt="ru" />
-          <p>Русский</p>
+          <p className='hidden lg:block'>Русский</p>
         </Link>
-        <Link href="/en" className="flex gap-3" onClick={()=>setOpen(value=>!value)}>
+        <Link href="/en" className="flex gap-3 hover:scale-110" onClick={()=>setOpen(value=>!value)}>
           <Image src={EngFlag} alt="en" />
-          <p>English</p>
+          <p className='hidden lg:block'>English</p>
         </Link>
       </div>
         )}

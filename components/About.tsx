@@ -85,8 +85,6 @@ const About = () => {
           src="/images/my-photo_big.jpg"
           width={400}
           height={600}
-          // layout="fill"
-          objectFit="cover"
           alt="about-image"
           className="rounded-2xl"
         /> 
