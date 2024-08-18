@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://valeriy-usatov.com/"),
   title: "Usatov Persinal Portfolio",
   description: "Usatov is Web Developer, React Developer, Next.Js Developer",
-<<<<<<< HEAD
   openGraph: {
     title: {
     default: "Usatov Persinal Portfolio",
@@ -23,19 +22,6 @@ export const metadata: Metadata = {
     url:'https://valeriy-usatov.com',
     siteName: "Portfolio Usatov"
   }
-=======
-  // openGraph: {
-  //   title: {
-  //   default: "Usatov Persinal Portfolio",
-  //   template: "%s - Usatov Persinal Portfolio" 
-  //   },
-  //   description: "Usatov is Web Developer, React Developer, Next.Js Developer",
-  //   type: "website",
-  //   locale: "en_Us",
-  //   url:'https://valeriy-usatov.com',
-  //   siteName: "Portfolio Usatov"
-  // }
->>>>>>> 8a81717
 };
 
 // Can be imported from a shared config
