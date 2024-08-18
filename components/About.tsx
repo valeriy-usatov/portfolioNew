@@ -116,7 +116,7 @@ const About = () => {
           {/* второй вариант */}
           {TAB_DATA.map((item) => {
             if (item.id === tab) {
-              return item.content;
+              return <div key={item.id}>{item.content}</div>;
             }
           })}
         </div>

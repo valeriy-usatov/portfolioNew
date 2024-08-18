@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
+import {unstable_setRequestLocale} from 'next-intl/server';
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://valeriy-usatov.com/"),
   title: "Usatov Persinal Portfolio",
   description: "Usatov is Web Developer, React Developer, Next.Js Developer",
+<<<<<<< HEAD
   openGraph: {
     title: {
     default: "Usatov Persinal Portfolio",
@@ -21,6 +23,19 @@ export const metadata: Metadata = {
     url:'https://valeriy-usatov.com',
     siteName: "Portfolio Usatov"
   }
+=======
+  // openGraph: {
+  //   title: {
+  //   default: "Usatov Persinal Portfolio",
+  //   template: "%s - Usatov Persinal Portfolio" 
+  //   },
+  //   description: "Usatov is Web Developer, React Developer, Next.Js Developer",
+  //   type: "website",
+  //   locale: "en_Us",
+  //   url:'https://valeriy-usatov.com',
+  //   siteName: "Portfolio Usatov"
+  // }
+>>>>>>> 8a81717
 };
 
 // Can be imported from a shared config
@@ -32,6 +47,7 @@ export function generateStaticParams() {
 
 
 export default async function LocaleLayout({
+  
   children,
   params: {locale}
 }: {
@@ -41,7 +57,8 @@ export default async function LocaleLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
- 
+  unstable_setRequestLocale(locale);
+  
   return (
     <html lang={locale}>
       <body className={inter.className}>
@@ -53,16 +70,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       <body className={inter.className}>{children}</body>
-//     </html>
-//   );
-// }
