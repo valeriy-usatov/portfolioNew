@@ -1,44 +1,43 @@
 {
-    "Navigation": {
-      "About": "About",
-      "Projects": "Projects",
-      "Contacts": "Contacts"
-    },
-    "About": {
-      "Hello": "Hello, I'm",
-      "Valeriy": "Valeriy",
-      "WebDev" : "Web Developer",
-      "ReactDev" : "React Developer",
-      "NextDev" : "Next.Js Developer",
-      "description": "Welcame to my portfolio! Scrol down to discover more about my projects, and how I can help bring yours ideas to life",
-      "HireMe": "Hire Me",
-      "download": "Download CV"
-    },
-    "AboutMe": {
-      "About_Me": "About Me",
-      "Description": "I am a web developer with a passion for creating interactive and responsive web applications. My expertise includes 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Redux', 'Node.js', 'HTML', 'CSS', 'Tailwind' 'CSS', and 'Git'. I thrive on continuous learning and am dedicated to expanding my knowledge and honing my skills. As a collaborative team player, I am driven by the excitement of working with others to craft extraordinary applications. Outside of coding, you can find me exploring new hiking trails or experimenting with gourmet cooking recipes.",
-      "Skills": "Skills",
-      "Education": "Education",
-      "Certifications": "Certifications",
-      "University": "Tomsk State University of Control Systems and Radioelectronics"
-      
-    },
-    "Projects": {
-      "title": "A small selection of",
-      "titleSpan": "recent projects"
-    },
-    "Contacts": {
-      "title": "Let&apos;s Connect",
-      "description": "I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!",
-      "EmailSent": "Email sent successfully!",
-      "Email": "Your email",
-      "Subject": "Subject",
-      "Message": "Message",
-      "sayHi": "Just saying hi",
-      "Talk": "Let's talk about...",
-      "Send": "Send Message"
-    },
-    "Footer": {
-      "copyright": "© 2024 Your App. All rights reserved."
-    }
+  "Navigation": {
+    "About": "About",
+    "Projects": "Projects",
+    "Contacts": "Contacts"
+  },
+  "About": {
+    "Hello": "Hello, I'm",
+    "Valeriy": "Valeriy",
+    "WebDev": "Web Developer",
+    "ReactDev": "React Developer",
+    "NextDev": "Next.Js Developer",
+    "description": "Welcame to my portfolio! Scrol down to discover more about my projects, and how I can help bring yours ideas to life",
+    "HireMe": "Hire Me",
+    "download": "Download CV"
+  },
+  "AboutMe": {
+    "About_Me": "About Me",
+    "Description": "I am a web developer with a passion for creating interactive and responsive web applications. My expertise includes 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Redux', 'Node.js', 'HTML', 'CSS', 'Tailwind' 'CSS', and 'Git'. I thrive on continuous learning and am dedicated to expanding my knowledge and honing my skills. As a collaborative team player, I am driven by the excitement of working with others to craft extraordinary applications. Outside of coding, you can find me exploring new hiking trails or experimenting with gourmet cooking recipes.",
+    "Skills": "Skills",
+    "Education": "Education",
+    "Certifications": "Certifications",
+    "University": "Tomsk State University of Control Systems and Radioelectronics"
+  },
+  "Projects": {
+    "title": "A small selection of",
+    "titleSpan": "recent projects"
+  },
+  "Contacts": {
+    "title": "Let&apos;s Connect",
+    "description": "I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!",
+    "EmailSent": "Email sent successfully!",
+    "Email": "Your email",
+    "Subject": "Subject",
+    "Message": "Message",
+    "sayHi": "Just saying hi",
+    "Talk": "Let's talk about...",
+    "Send": "Send Message"
+  },
+  "Footer": {
+    "copyright": "© 2024 Your App. All rights reserved."
   }
+}

@@ -85,8 +85,6 @@ const About = () => {
           src="/images/my-photo_big.jpg"
           width={400}
           height={600}
-          // layout="fill"
-          objectFit="cover"
           alt="about-image"
           className="rounded-2xl"
         /> 
@@ -118,7 +116,7 @@ const About = () => {
           {/* второй вариант */}
           {TAB_DATA.map((item) => {
             if (item.id === tab) {
-              return item.content;
+              return <div key={item.id}>{item.content}</div>;
             }
           })}
         </div>

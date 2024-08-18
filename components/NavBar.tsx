@@ -56,6 +56,7 @@ const NavBar = () => {
             </button>
           )}
         </div>
+       
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0  gap-4 mt-0">
             {navLinks.map((link, index) => (
@@ -68,6 +69,8 @@ const NavBar = () => {
         <div>
           <SelectLanguage/>
         </div>
+
+        
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
