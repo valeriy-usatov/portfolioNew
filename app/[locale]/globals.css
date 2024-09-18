@@ -43,3 +43,35 @@ img {
   width: 100%; 
   height: auto;
 }
+
+.tooltip {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.tooltip::after {
+  content: "GitHub"; /* Текст подсказки */
+  position: absolute;
+  bottom: 120%; /* Расположение над иконкой */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #02072d;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltipWeb::after {
+  content: "Go to WebSite";
+}

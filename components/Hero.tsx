@@ -77,7 +77,7 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
             >
-              <Image src="/images/photo-2.png" alt="hero image" width={400} height={400} />
+              <Image src="/images/photo-2.webp" alt="hero image" width={400} height={400} />
             </motion.div>
           </div>
         </div>

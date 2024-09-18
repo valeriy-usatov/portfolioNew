@@ -54,11 +54,15 @@ const ResentProjects = () => {
   
                   <div className="flex justify-center items-center gap-4">
                     <Link href={link} target="_blank" className="flex lg:text-xl md:text-xs text-sm text-purple hover:scale-125">
-                    <img src='./www.svg' alt="git" className="lg:w-10 lg:h-10 w-8 h-8" />
+                      <div className="tooltip tooltipWeb">
+                    <img src='./www.svg' alt="git" className="lg:w-10 lg:h-10 w-8 h-8"/>
+                      </div>
                     </Link>
                     {/* <FaLocationArrow className="ms-3" color="#CBACF9" /> */}
                     <Link href={gitHubLink} target="_blank" className="flex lg:text-xl md:text-xs text-sm text-purple hover:scale-125">
-                    <img src='./git.svg' alt="git" className="lg:w-10 lg:h-10 w-8 h-8 " />
+                      <div className="tooltip tooltipGit">
+                    <img src='./git.svg' alt="git" className="lg:w-10 lg:h-10 w-8 h-8 "/>
+                      </div>
                     </Link>
                   </div>
                 </div>

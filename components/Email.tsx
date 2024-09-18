@@ -19,25 +19,20 @@ const LabelInputContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn('flex flex-col space-y-2 w-full', className)}>{children}</div>;
 };
-
 
 const Email = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const t = useTranslations('Contacts');
 
-  type FormType ={
-    email:string, 
-    subject:string, 
-    message:string
-  }
+  type FormType = {
+    email: string;
+    subject: string;
+    message: string;
+  };
 
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
       email: (e.target as HTMLFormElement).email.value,
@@ -73,23 +68,29 @@ const Email = () => {
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">{t('title')}</h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-        {t('description')}
-        </p>
+        <p className="text-[#ADB7BE] mb-4 max-w-md">{t('description')}</p>
         <div className="socials flex gap-2">
-          <Link className='hover:scale-125' href="https://github.com/valeriy-usatov/" target="_blank">
+          <Link
+            className="hover:scale-125"
+            href="https://github.com/valeriy-usatov/"
+            target="_blank"
+          >
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link className='hover:scale-125' href="linkedin.com" target="_blank">
+          <Link className="hover:scale-125" href="linkedin.com" target="_blank">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
-          <Link className='hover:scale-125' href="https://web.telegram.org/k/#@Valeriy1983" target="_blank">
+          <Link
+            className="hover:scale-125"
+            href="https://web.telegram.org/k/#@Valeriy1983"
+            target="_blank"
+          >
             <Image src={Telegram} alt="Linkedin Icon" />
           </Link>
-          <Link className='hover:scale-125' href="https://wa.me/79609771221" target="_blank">
+          <Link className="hover:scale-125" href="https://wa.me/79609771221" target="_blank">
             <Image src={Whatsapp} alt="Linkedin Icon" />
           </Link>
-        </div >
+        </div>
       </div>
       <div>
         {emailSubmitted ? (
@@ -99,7 +100,7 @@ const Email = () => {
             <div className="">
               <LabelInputContainer>
                 <Label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
-                {t('Email')}
+                  {t('Email')}
                 </Label>
               </LabelInputContainer>
               <Input
@@ -114,7 +115,7 @@ const Email = () => {
             <div className="">
               <LabelInputContainer>
                 <Label htmlFor="subject" className="text-white block text-sm mb-2 font-medium">
-                {t('Subject')}
+                  {t('Subject')}
                 </Label>
               </LabelInputContainer>
               <Input
@@ -129,7 +130,7 @@ const Email = () => {
             <div className="">
               <LabelInputContainer>
                 <Label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
-                {t('Message')}
+                  {t('Message')}
                 </Label>
               </LabelInputContainer>
               <Input
@@ -140,12 +141,7 @@ const Email = () => {
                 placeholder={t('Talk')}
               />
             </div>
-            {/* <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              Send Message
-            </button> */}
+
             <Button title={t('Send')} />
           </form>
         )}
@@ -155,5 +151,3 @@ const Email = () => {
 };
 
 export default Email;
-
-

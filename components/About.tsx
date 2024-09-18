@@ -82,7 +82,7 @@ const About = () => {
         >
          
           <Image
-          src="/images/my-photo_big.jpg"
+          src="/images/my-photo_big.webp"
           width={400}
           height={600}
           alt="about-image"
