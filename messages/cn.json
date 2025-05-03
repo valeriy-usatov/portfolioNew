@@ -1,0 +1,56 @@
+{
+  "Navigation": {
+    "About": "关于",
+    "Projects": "项目",
+    "Contacts": "联系"
+  },
+  "About": {
+    "Hello": "你好，我是",
+    "Valeriy": "瓦列里",
+    "WebDev": "网页开发员",
+    "ReactDev": "React 开发员",
+    "NextDev": "Next.Js 开发员",
+    "description": "欢迎来到我的作品集！向下滚动以了解更多关于我的项目，以及我如何帮助实现您的创意",
+    "HireMe": "雇佣我",
+    "download": "下载简历"
+  },
+  "AboutMe": {
+    "About_Me": "关于我",
+    "Description": "我是一名热衷于创建交互式和响应式网页应用程序的网页开发员。我的专长包括 'JavaScript'、'TypeScript'、'React'、'Next.js'、'Redux'、'Node.js'、'HTML'、'CSS'、'Tailwind CSS' 和 'Git'。我热爱持续学习，致力于扩展知识和提升技能。作为一名团队合作者，我热衷于与他人合作打造卓越的应用程序。在编程之外，您可能会发现我在探索新的徒步路线或尝试美食烹饪食谱。",
+    "Skills": "技能",
+    "Education": "教育",
+    "Certifications": "认证",
+    "University": "托木斯克控制系统与无线电电子大学"
+  },
+  "Projects": {
+    "title": "精选",
+    "titleSpan": "近期项目"
+  },
+  "Contacts": {
+    "title": "保持联系",
+    "description": "我正在寻找新的机会，我的收件箱始终开放。无论您有问题还是只想打个招呼，我都会尽力回复您！",
+    "EmailSent": "邮件发送成功！",
+    "Email": "您的邮箱",
+    "Subject": "主题",
+    "Message": "消息",
+    "sayHi": "打个招呼",
+    "Talk": "让我们谈谈...",
+    "Send": "发送消息"
+  },
+  "Footer": {
+    "copyright": "© 2024 您的应用。保留所有权利。"
+  },
+  "Baner": {
+    "title": "我开发网站和应用程序！",
+    "subTitle": "随时洽谈您的项目",
+    "Details": "详情",
+    "MyServices": "我的服务",
+    "Landing": "一站式落地页开发",
+    "ECommerce": "电子商务网站",
+    "WebApplications": "网页应用程序",
+    "Multililang": "多语言解决方案",
+    "APIIntegrations": "API 集成",
+    "Close": "关闭",
+    "Contact": "联系我"
+  }
+}

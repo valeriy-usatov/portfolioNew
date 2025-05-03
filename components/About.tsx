@@ -11,8 +11,6 @@ interface TabData {
   content: ReactElement;
 }
 
-
-
 const About = () => {
   const [tab, setTab] = useState('skills');
   const [isPending, startTransition] = useTransition();
@@ -35,7 +33,12 @@ const About = () => {
           <li>React</li>
           <li>Next.js</li>
           <li>Redux</li>
+          <li>Zustand</li>
           <li>Node.js</li>
+          <li>Auth.js</li>
+          <li>Docker</li>
+          <li>React Query</li>
+          <li>PostgreSQL</li>
           <li>HTML</li>
           <li>CSS</li>
           <li>Tailwind</li>
@@ -67,34 +70,31 @@ const About = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8  py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-       <div className='flex justify-center'>
-       <Button
-          duration={Math.floor(Math.random() * 10000) + 10000}
-          borderRadius="1.75rem"
-          style={{
-            background: 'rgb(4,7,29)',
-            backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
-            // add this border radius to make it more rounded so that the moving border is more realistic
-            borderRadius: `calc(1.75rem* 0.96)`,
-          }}
-          // remove bg-white dark:bg-slate-900
-          className="flex-1 text-black dark:text-white border-neutral-700 dark:border-slate-800"
-        >
-         
-          <Image
-          src="/images/my-photo_big.webp"
-          width={400}
-          height={600}
-          alt="about-image"
-          className="rounded-2xl"
-        /> 
-        </Button>
-       </div>
+        <div className="flex justify-center">
+          <Button
+            duration={Math.floor(Math.random() * 10000) + 10000}
+            borderRadius="1.75rem"
+            style={{
+              background: 'rgb(4,7,29)',
+              backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
+              // add this border radius to make it more rounded so that the moving border is more realistic
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            // remove bg-white dark:bg-slate-900
+            className="flex-1 text-black dark:text-white border-neutral-700 dark:border-slate-800"
+          >
+            <Image
+              src="/images/my-photo_big.webp"
+              width={400}
+              height={600}
+              alt="about-image"
+              className="rounded-2xl"
+            />
+          </Button>
+        </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4 text-center">{t('About_Me')}</h2>
-          <p className="text-base lg:text-lg">
-          {t('Description')}
-          </p>
+          <p className="text-base lg:text-lg">{t('Description')}</p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton selectTab={() => handleTabChange('skills')} active={tab === 'skills'}>
               {' '}

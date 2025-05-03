@@ -39,5 +39,18 @@
   },
   "Footer": {
     "copyright": "© 2024 Your App. All rights reserved."
+  },
+  "Baner": {
+    "title": "I develop websites and applications!",
+    "subTitle": "Ready to discuss your project.",
+    "Details": "Details",
+    "MyServices": "My Services",
+    "Landing": "Turnkey landing pages",
+    "ECommerce": "E-commerce websites",
+    "WebApplications": "Web applications",
+    "Multililang": "Multilingual solutions",
+    "APIIntegrations": "API integrations",
+    "Close": "Close",
+    "Contact": "Contact me"
   }
 }
